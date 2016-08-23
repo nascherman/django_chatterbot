@@ -6,3 +6,5 @@ lib
 *.pyc
 *.swp
 *.egg-info
+poster/node_modules
+poster/node_modules/*
