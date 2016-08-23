@@ -2,7 +2,7 @@ from django.views.generic import View
 from django.http import JsonResponse
 from chatterbot import ChatBot
 from chatterbot.training.trainers import ListTrainer
-
+from django.views.decorators.csrf import csrf_exempt
 
 chatterbot = ChatBot(
     'Example ChatterBot',
@@ -33,7 +33,7 @@ class ChatterBotView(View):
 
         # Return a method not allowed response
         return JsonResponse(data, status=405)
-
+@csrf_exempt
     def post(self, request, *args, **kwargs):
         input_statement = request.POST.get('text')
 
