@@ -5,13 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "demo": "budo --port 8000 index.js:bundle.js --live --debug",
+    "demo": "budo index.js:bundle.js --live --debug",
     "build": "browserify demo.js -t babelify  > bundle.js"
   },
   "author": "Nick Scherman <n_scherman@hotmail.com>",
   "license": "ISC",
   "dependencies": {
-    "http": "0.0.0",
     "http-post": "^0.1.1"
   },
   "devDependencies": {

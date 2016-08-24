@@ -1,11 +1,13 @@
 var http = require('http');
 http.post = require('http-post');
 
+var ip = '192.168.2.16';
+
 require('domready')(function() {
-  demo();
+  demo(ip);  
 });
 
-function demo() {
+function demo(ip) {
   var div = document.getElementById('chat-container');
   var button = document.createElement('button');
   button.addEventListener('click', submit);
@@ -18,7 +20,7 @@ function submit() {
   var out = document.getElementById('chat-output');
   if(!text || text.length <= 0) return;
 
-  http.post('http://127.0.0.1:8000/api/chatterbot/', { 
+  http.post('http://' + ip + ':8000/api/chatterbot/', { 
     text: text,
     headers: {
       "Access-Control-Allow-Origin": "*"
